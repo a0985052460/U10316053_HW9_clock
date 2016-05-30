@@ -80,12 +80,22 @@ public class ClockPane extends Pane {
 
     // Draw circle
     Circle circle = new Circle(centerX, centerY, clockRadius);
-    circle.setFill(Color.WHITE);
+    Calendar calendar = new GregorianCalendar();
+    //if the sky was dark the clock will change to blue
+    //else the clock will change color to lightyellow
+    if(calendar.get(Calendar.HOUR_OF_DAY)<5||calendar.get(Calendar.HOUR_OF_DAY)>18)circle.setFill(Color.CORNFLOWERBLUE);
+    else circle.setFill(Color.LIGHTYELLOW);
+    
     circle.setStroke(Color.BLACK);
     Text t1 = new Text(centerX - 5, centerY - clockRadius + 12, "12");
     Text t2 = new Text(centerX - clockRadius + 3, centerY + 5, "9");
     Text t3 = new Text(centerX + clockRadius - 10, centerY + 3, "3");
     Text t4 = new Text(centerX - 3, centerY + clockRadius - 3, "6");
+    //add the circle at the middle 
+    Text t5 = new Text((centerX*2-7.5)/2,(centerY*2+8.5)/2, "O");
+    
+    
+    
     
     // Draw second hand
     double sLength = clockRadius * 0.8;
@@ -116,6 +126,7 @@ public class ClockPane extends Pane {
     
     getChildren().clear();  
     getChildren().addAll(circle, t1, t2, t3, t4, sLine, mLine, hLine);
+    getChildren().addAll(t5);
   }
   
   @Override

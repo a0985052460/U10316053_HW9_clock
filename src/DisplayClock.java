@@ -1,4 +1,6 @@
 //U10316053 µ{¬fºú
+import java.awt.Color;
+
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -11,6 +13,7 @@ public class DisplayClock extends Application {
   public void start(Stage primaryStage) {
     // Create a clock and a label
     ClockPane clock = new ClockPane();
+    
     String timeString = clock.getHour() + ":" + clock.getMinute() 
       + ":" + clock.getSecond();
     Label lblCurrentTime = new Label(timeString);
@@ -23,7 +26,7 @@ public class DisplayClock extends Application {
 
     // Create a scene and place it in the stage
     Scene scene = new Scene(pane, 250, 250);
-    primaryStage.setTitle("DisplayClock"); // Set the stage title
+    primaryStage.setTitle("U10316053 µ{¬fºú"); // Set the stage title
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage
   }
